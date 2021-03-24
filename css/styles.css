@@ -14,6 +14,7 @@ body {
     "main"
     "footer";
   grid-auto-flow: row;
+  overflow-x: hidden;
 }
 
 :root {
@@ -163,8 +164,7 @@ body {
   padding-right: 25px;
   margin-left: 145px;
   padding-top: 10px;
-  /* border-color: forestgreen;
-  border-style: solid; */
+
   border-radius: 10px;
 }
 
@@ -501,67 +501,104 @@ body {
     width: 90%;
     bottom: 400px;
     top: -180px;
-    /* border-style: solid; */
   }
   .container__second__part {
     top: -210px;
     width: 90%;
     text-align: center;
     margin-bottom: 100px;
-    /* border-style: solid; */
   }
 }
+
 .final__part {
-  height: 125vh;
+  margin-top: 100px;
   width: 100vw;
-  border-style: solid;
-  border-color: crimson;
   display: flex;
-  align-items: center;
-  margin-bottom: 100px;
+  align-items: flex-end;
+  margin-bottom: 20%;
 }
 
 .container__final__part {
   position: relative;
-  border-color: teal;
-  border-style: solid;
-  width: 100%;
-  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: 50px;
+  width: 550px;
+
+  margin-left: 10%;
 }
 
 .final__part__img__container {
+  width: 500px;
+  height: 600px;
   position: relative;
-  background-image: url(../images/illustration-laptop-desktop.svg);
-  width: 100%;
-  height: 100%;
-  border-style: solid;
-  background-repeat: no-repeat;
-  background-position-x: -340px;
+}
+.final__part__img__container::before {
+  content: url(../images/illustration-laptop-desktop.svg);
+  position: absolute;
+  left: -350px;
 }
 
+.final_art {
+  display: flex;
+  flex-direction: column;
+}
 .title__second__div {
   padding-bottom: 20px;
 }
 .title__final__part {
   margin-bottom: 26px;
   color: var(--color-very-dark-blue);
-  font-size: 2rem;
+  font-size: 1.9rem;
   white-space: nowrap;
   font-weight: 600;
 }
 
 .parragraft__final__part {
-  width: 65%;
   color: var(--color-very-dark-grayish-blue);
-  font-size: 0.9em;
+  font-size: 0.9rem;
   font-weight: 300;
+  text-align: left;
 }
 
 .second__final__title {
   margin-top: 40px;
+}
+@media screen and (max-width: 900px) {
+  .final__part {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container__final__part {
+    width: 100%;
+    text-align: center;
+    left: 0;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .final__part__img__container {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: center;
+  }
+  .final__part__img__container::before {
+    content: url(../images/illustration-laptop-mobile.svg);
+    position: relative;
+    left: 0;
+  }
+
+  .final_art {
+    width: 100%;
+  }
+  .parragraft__final__part {
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .footer__part {
