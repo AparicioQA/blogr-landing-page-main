@@ -14,7 +14,7 @@ body {
     "main"
     "footer";
   grid-auto-flow: row;
-  overflow-x: hidden;
+  /* overflow: hidden; */
 }
 
 :root {
@@ -172,7 +172,7 @@ body {
   .links__menus {
     position: absolute;
     width: 90%;
-    margin-top: 40px;
+    margin-top: 55px;
     padding-right: 0px;
     margin-left: 0px;
     padding-bottom: 15px;
@@ -209,9 +209,6 @@ body {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-
-  /* display: none; */
-  /* visibility: hidden; */
 }
 .item_nav_list:hover {
   text-decoration: underline;
@@ -237,11 +234,7 @@ body {
 }
 
 /* ACA ES PARA DESACTIVAR LA MANDRE DE LOS MENUS */
-.list_disabled {
-  /* display: none; */
-}
-
-.links__menus {
+.disabled {
   display: none;
 }
 
@@ -263,14 +256,15 @@ body {
   text-decoration: underline;
 }
 .menu-title::after {
-  position: absolute;
   content: "";
+  position: absolute;
   background-image: url(../images/icon-arrow-light.svg);
+  background-repeat: no-repeat;
   width: 10px;
-  height: 15px;
+  height: 10px;
   margin-top: 5px;
   margin-left: 10px;
-  background-repeat: no-repeat;
+  transition: transform 0.2s;
 }
 
 @media screen and (max-width: 900px) {
@@ -278,7 +272,9 @@ body {
     background-image: url(../images/icon-arrow-dark.svg);
   }
 }
-
+.clicked {
+  color: var(--color-Grayish-blue);
+}
 .register-buttons {
   width: 250px;
   height: 100%;
@@ -308,6 +304,10 @@ body {
   color: white;
 }
 
+.menu-title:hover:after {
+  transform: rotate(180deg);
+}
+
 .button__register {
   background-color: white;
   display: flex;
@@ -335,6 +335,22 @@ body {
       var(--light-red)
     );
     color: white;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .amburger {
+    width: 35px;
+    align-self: flex-end;
+    margin-right: 40px;
+    margin-top: 10px;
+  }
+  .amburger__buttom {
+    content: url(../images/icon-hamburger.svg);
+  }
+  .close__buttom {
+    width: 30px;
+    content: url(../images/icon-close.svg);
   }
 }
 .first___part {
