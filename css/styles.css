@@ -233,7 +233,6 @@ body {
   }
 }
 
-/* ACA ES PARA DESACTIVAR LA MANDRE DE LOS MENUS */
 .disabled {
   display: none;
 }
